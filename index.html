@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BugFinder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="assets/image/2.png" alt="BugFinder Logo" style="height: 30px; margin-right: 10px;">
+            <strong>BugFinder</strong>
+        </a>
+        <nav>
+            <a href="index.html">메인</a>
+            <a href="pages/lecture.html">학습</a>
+            <a href="pages/forum.html">커뮤니티</a>
+            <a href="pages/ranking.html">랭킹</a>
+            <a href="pages/login.html" class="login-button" style="background:#4f8cff;color:#fff;">로그인</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <div class="label">Uncover. Understand. Fix.</div>
+            <div class="headline">
+                <span class="highlight">‘왜 안 될까?’</span>에 지친<br>
+                당신을 위해.
+            </div>
+            <div class="subtext">
+                BugFinder는 에러의 원인부터 해결 방법까지 한눈에 보여줍니다.
+            </div>
+            <button class="cta-button" onclick="location.href='pages/lecture.html'">디버깅 하러가기</button>
+        </div>
+        <div class="hero-image">
+            <img src="assets/image/1.png" alt="코딩 이미지">
+        </div>
+        <div class="hero-arrowdown">
+            <img src="assets/icon/arrowdown.svg" alt="아래로 스크롤" id="scroll-down-arrow">
+        </div>
+    </section>
+
+    <section id="notice-banner-section" class="notice-banner-section" style="background:linear-gradient(90deg,#e3f0ff 0%,#fffbe3 100%);padding:44px 0 32px 0;">
+        <div class="container" style="max-width:1080px;margin:0 auto;">
+            <h2 style="font-size:1.35em;font-weight:800;margin-bottom:24px;letter-spacing:-1px;text-align:center;color:#1976d2;">🚩 BugFinder 소식 & 이벤트</h2>
+            <div class="notice-banner-list" style="display:flex;flex-wrap:wrap;gap:28px;justify-content:center;">
+                <div class="notice-card" style="background:linear-gradient(120deg,#fff 70%,#e3f0ff 100%);border-radius:18px;box-shadow:0 4px 18px rgba(25,118,210,0.08);padding:28px 32px 22px 32px;min-width:260px;flex:1 1 280px;max-width:340px;display:flex;flex-direction:column;align-items:center;transition:transform 0.18s;position:relative;overflow:hidden;">
+                    <span style="position:static;display:inline-block;margin-bottom:12px;background:#1976d2;color:#fff;font-size:0.92em;padding:2px 18px;border-radius:12px;font-weight:600;box-shadow:0 2px 8px rgba(25,118,210,0.08);align-self:center;">NEW</span>
+                    <div style="font-weight:700;color:#1976d2;font-size:1.08em;margin-bottom:8px;">[업데이트] 강의 영상 기능 추가</div>
+                    <div style="font-size:0.99em;color:#444;text-align:center;">이제 문제별 강의 영상을 확인할 수 있습니다!<br>더 많은 기능이 곧 추가될 예정입니다.</div>
+                    <div style="margin-top:16px;font-size:0.93em;color:#aaa;">2025.06.18</div>
+                </div>
+                <div class="notice-card" style="background:linear-gradient(120deg,#fff 70%,#e3ffe3 100%);border-radius:18px;box-shadow:0 4px 18px rgba(25,118,210,0.08);padding:28px 32px 22px 32px;min-width:260px;flex:1 1 280px;max-width:340px;display:flex;flex-direction:column;align-items:center;transition:transform 0.18s;position:relative;overflow:hidden;">
+                    <span style="position:static;display:inline-block;margin-bottom:12px;background:#43c97c;color:#fff;font-size:0.92em;padding:2px 18px;border-radius:12px;font-weight:600;box-shadow:0 2px 8px rgba(67,201,124,0.08);align-self:center;">HOT</span>
+                    <div style="font-weight:700;color:#1976d2;font-size:1.08em;margin-bottom:8px;">BugFinder 공식 디스코드 오픈!</div>
+                    <div style="font-size:0.99em;color:#444;text-align:center;">커뮤니티 소식, 실시간 Q&A, 이벤트를<br>디스코드에서 만나보세요!</div>
+                    <a href="https://discord.com" target="_blank" style="margin-top:16px;font-size:0.99em;color:#1976d2;text-decoration:underline;font-weight:700;">참여하기</a>
+                </div>
+                <div class="notice-card" style="background:linear-gradient(120deg,#fff 70%,#ffe3e3 100%);border-radius:18px;box-shadow:0 4px 18px rgba(210,118,25,0.08);padding:28px 32px 22px 32px;min-width:260px;flex:1 1 280px;max-width:340px;display:flex;flex-direction:column;align-items:center;transition:transform 0.18s;position:relative;overflow:hidden;">
+                    <span style="position:static;display:inline-block;margin-bottom:12px;background:#ffb347;color:#fff;font-size:0.92em;padding:2px 18px;border-radius:12px;font-weight:600;box-shadow:0 2px 8px rgba(210,118,25,0.08);align-self:center;">EVENT</span>
+                    <div style="font-weight:700;color:#d2691e;font-size:1.08em;margin-bottom:8px;">여름방학 버그헌터 챌린지</div>
+                    <div style="font-size:0.99em;color:#444;text-align:center;">7월~8월, 문제 풀이 랭킹 이벤트!<br>상위 10명에게 특별 굿즈 증정</div>
+                    <div style="margin-top:16px;font-size:0.93em;color:#aaa;">2025.07 예정</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="features" class="features-section">
+        <h2>주요 기능</h2>
+        <div class="features-list">
+            <div class="feature-item">
+                <h3>자동 에러 분석</h3>
+                <p>코드의 에러를 자동으로 분석하고 원인과 해결 방법을 제시합니다.</p>
+            </div>
+            <div class="feature-item">
+                <h3>실시간 디버깅</h3>
+                <p>실시간으로 코드를 실행하며 문제를 빠르게 찾을 수 있습니다.</p>
+            </div>
+            <div class="feature-item">
+                <h3>커뮤니티 Q&A</h3>
+                <p>다른 개발자들과 질문을 주고받으며 함께 성장할 수 있습니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="community" class="community-section">
+        <h2>커뮤니티</h2>
+        <p>다른 개발자들과 소통하며 다양한 문제를 함께 해결해보세요.</p>
+        <a href="pages/forum.html" class="community-link">커뮤니티 바로가기</a>
+    </section>
+
+    <section id="faq" class="faq-section">
+        <h2>자주 묻는 질문</h2>
+        <div class="faq-list">
+            <div class="faq-item">
+                <strong>Q. BugFinder는 무료인가요?</strong>
+                <p>A. 네, 기본 기능은 무료로 제공됩니다.</p>
+            </div>
+            <div class="faq-item">
+                <strong>Q. 지원하는 언어는 무엇인가요?</strong>
+                <p>A. Python, JavaScript 등 다양한 언어를 지원합니다.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>문의하기</h2>
+        <p>서비스 관련 문의는 <a href="mailto:contact@bugfinder.com">contact@bugfinder.com</a>으로 연락해주세요.</p>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-sitemap">
+            <div>
+                <h4>메인</h4>
+                <ul>
+                    <li><a href="#">서비스 소개</a></li>
+                    <li><a href="pages/lecture.html">공지사항</a></li>
+                    <li><a href="pages/forum.html">인기 콘텐츠</a></li>
+                    <li><a href="pages/ranking.html">이벤트 및 배너</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>학습</h4>
+                <ul>
+                    <li><a href="#features">강의</a></li>
+                    <li><a href="#how-to">문제 풀이</a></li>
+                    <li><a href="#faq">실습</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>커뮤니티</h4>
+                <ul>
+                    <li><a href="#">자유게시판</a></li>
+                    <li><a href="#">질문답변</a></li>
+                    <li><a href="#">내 활동</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>랭킹</h4>
+                <ul>
+                    <li><a href="#">전체 랭킹</a></li>
+                    <li><a href="#">카테고리별 랭킹</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>소셜</h4>
+                <ul class="footer-social">
+                    <li><a href="https://github.com/dlehdrjsgg/BugFinder"><img src="assets/icon/github.svg" alt="GitHub" /></a>
+                    </li>
+                    <li><a href="https://youtube.com/"><img src="assets/icon/youtube.svg" alt="YouTube" /></a></li>
+                    <li><a href="https://discord.com"><img src="assets/icon/discord.svg" alt="Discord" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © BugFinder 2025. All rights reserved.
+        </div>
+    </footer>
+    <script>
+document.getElementById('scroll-down-arrow').addEventListener('click', function() {
+    const nextSection = document.querySelector('.notice-banner-section');
+    if (nextSection) {
+        nextSection.scrollIntoView({ behavior: 'smooth' });
+    }
+});
+</script>
+</body>
+
+</html>

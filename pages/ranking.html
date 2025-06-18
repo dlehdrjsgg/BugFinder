@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>랭킹 | BugFinder</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style/ranking.style.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="../assets/image/2.png" alt="BugFinder Logo" style="height: 30px; margin-right: 10px;">
+            <strong>BugFinder</strong>
+        </a>
+        <nav>
+            <a href="../index.html">메인</a>
+            <a href="lecture.html">학습</a>
+            <a href="forum.html">커뮤니티</a>
+            <a href="ranking.html" style="color:#1976d2;font-weight:600;">랭킹</a>
+            <a href="login.html" class="login-button" style="background:#4f8cff;color:#fff;">로그인</a>
+        </nav>
+    </header>
+    <div class="ranking-container">
+        <div class="ranking-title">🏆 랭킹</div>
+        <div class="ranking-desc">BugFinder에서 가장 활발하게 활동한 유저 TOP 10을 소개합니다!</div>
+        <div class="ranking-tabs">
+            <button class="tab-btn active" data-tab="all">전체 랭킹</button>
+            <button class="tab-btn" data-tab="weekly">주간 랭킹</button>
+            <button class="tab-btn" data-tab="monthly">월간 랭킹</button>
+        </div>
+        <div class="tab-content active" id="tab-all">
+            <table class="ranking-table">
+                <thead>
+                    <tr>
+                        <th>순위</th>
+                        <th>닉네임</th>
+                        <th>점수</th>
+                        <th>레벨</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="top1">
+                        <td class="rank"><span class="ranking-badge">1</span></td>
+                        <td class="name">지후</td>
+                        <td class="score">9,800</td>
+                        <td>Lv. 20</td>
+                    </tr>
+                    <tr class="top2">
+                        <td class="rank"><span class="ranking-badge">2</span></td>
+                        <td class="name">코드마스터</td>
+                        <td class="score">8,900</td>
+                        <td>Lv. 19</td>
+                    </tr>
+                    <tr class="top3">
+                        <td class="rank"><span class="ranking-badge">3</span></td>
+                        <td class="name">버그헌터</td>
+                        <td class="score">8,200</td>
+                        <td>Lv. 18</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">4</td>
+                        <td class="name">알고리즘킹</td>
+                        <td class="score">7,700</td>
+                        <td>Lv. 17</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">5</td>
+                        <td class="name">디버그짱</td>
+                        <td class="score">7,100</td>
+                        <td>Lv. 16</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">6</td>
+                        <td class="name">JS고수</td>
+                        <td class="score">6,800</td>
+                        <td>Lv. 16</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">7</td>
+                        <td class="name">파이썬러버</td>
+                        <td class="score">6,200</td>
+                        <td>Lv. 15</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">8</td>
+                        <td class="name">C마스터</td>
+                        <td class="score">5,900</td>
+                        <td>Lv. 15</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">9</td>
+                        <td class="name">프론트엔드</td>
+                        <td class="score">5,400</td>
+                        <td>Lv. 14</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">10</td>
+                        <td class="name">백엔드</td>
+                        <td class="score">5,000</td>
+                        <td>Lv. 14</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-content" id="tab-weekly">
+            <table class="ranking-table">
+                <tbody>
+                    <tr class="top1">
+                        <td class="rank"><span class="ranking-badge">1</span></td>
+                        <td class="name">지후</td>
+                        <td class="score">1,200</td>
+                        <td>Lv. 20</td>
+                    </tr>
+                    <tr class="top2">
+                        <td class="rank"><span class="ranking-badge">2</span></td>
+                        <td class="name">JS고수</td>
+                        <td class="score">1,100</td>
+                        <td>Lv. 16</td>
+                    </tr>
+                    <tr class="top3">
+                        <td class="rank"><span class="ranking-badge">3</span></td>
+                        <td class="name">코드마스터</td>
+                        <td class="score">1,050</td>
+                        <td>Lv. 19</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">4</td>
+                        <td class="name">버그헌터</td>
+                        <td class="score">1,000</td>
+                        <td>Lv. 18</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">5</td>
+                        <td class="name">파이썬러버</td>
+                        <td class="score">950</td>
+                        <td>Lv. 15</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-content" id="tab-monthly">
+            <table class="ranking-table">
+                <tbody>
+                    <tr class="top1">
+                        <td class="rank"><span class="ranking-badge">1</span></td>
+                        <td class="name">코드마스터</td>
+                        <td class="score">4,200</td>
+                        <td>Lv. 19</td>
+                    </tr>
+                    <tr class="top2">
+                        <td class="rank"><span class="ranking-badge">2</span></td>
+                        <td class="name">지후</td>
+                        <td class="score">4,100</td>
+                        <td>Lv. 20</td>
+                    </tr>
+                    <tr class="top3">
+                        <td class="rank"><span class="ranking-badge">3</span></td>
+                        <td class="name">버그헌터</td>
+                        <td class="score">3,900</td>
+                        <td>Lv. 18</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">4</td>
+                        <td class="name">알고리즘킹</td>
+                        <td class="score">3,700</td>
+                        <td>Lv. 17</td>
+                    </tr>
+                    <tr>
+                        <td class="rank">5</td>
+                        <td class="name">디버그짱</td>
+                        <td class="score">3,500</td>
+                        <td>Lv. 16</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-sitemap">
+            <div>
+                <h4>메인</h4>
+                <ul>
+                    <li><a href="../index.html">서비스 소개</a></li>
+                    <li><a href="../index.html">공지사항</a></li>
+                    <li><a href="../pages/forum.html">인기 콘텐츠</a></li>
+                    <li><a href="../index.html">이벤트 및 배너</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>학습</h4>
+                <ul>
+                    <li><a href="../pages/lecture.html">강의</a></li>
+                    <li><a href="../pages/lecture.html">문제 풀이</a></li>
+                    <li><a href="../pages/lecture.html">실습</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>커뮤니티</h4>
+                <ul>
+                    <li><a href="../pages/forum.html">자유게시판</a></li>
+                    <li><a href="../pages/forum.html">질문답변</a></li>
+                    <li><a href="../pages/forum.html">내 활동</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>랭킹</h4>
+                <ul>
+                    <li><a href="../pages/ranking.html">전체 랭킹</a></li>
+                    <li><a href="../pages/ranking.html">카테고리별 랭킹</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>소셜</h4>
+                <ul class="footer-social">
+                    <li><a href="https://github.com/dlehdrjsgg/BugFinder"><img src="../assets/icon/github.svg" alt="GitHub" /></a></li>
+                    <li><a href="https://youtube.com/"><img src="../assets/icon/youtube.svg" alt="YouTube" /></a></li>
+                    <li><a href="https://discord.com"><img src="../assets/icon/discord.svg" alt="Discord" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © BugFinder 2025. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        // 탭 전환 스크립트
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabContents.forEach(tc => tc.classList.remove('active'));
+                btn.classList.add('active');
+                document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>커뮤니티 | BugFinder</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="style/forum.style.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html" style="display: flex; align-items: center; text-decoration: none;">
+            <img src="../assets/image/2.png" alt="BugFinder Logo" style="height: 30px; margin-right: 10px;">
+            <strong>BugFinder</strong>
+        </a>
+        <nav>
+            <a href="../index.html">메인</a>
+            <a href="lecture.html">학습</a>
+            <a href="forum.html" style="color:#1976d2;font-weight:600;">커뮤니티</a>
+            <a href="ranking.html">랭킹</a>
+            <a href="login.html" class="login-button" style="background:#4f8cff;color:#fff;">로그인</a>
+        </nav>
+    </header>
+    <div class="forum-layout">
+        <main class="forum-main">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px;">
+                <div style="display: flex; gap: 8px; align-items: center;">
+                    <button class="tab-btn active" data-tab="tab-popular" style="background:#1976d2;color:#fff;border:none;padding:6px 16px;border-radius:16px;font-weight:700;font-size:0.98rem;box-shadow:0 2px 8px rgba(25,118,210,0.09);letter-spacing:0.3px;">인기글</button>
+                    <button class="tab-btn" data-tab="tab-latest" style="background:#f4f7fb;color:#1976d2;border:none;padding:6px 16px;border-radius:16px;font-weight:600;font-size:0.98rem;">최신글</button>
+                    <button class="tab-btn" data-tab="tab-unanswered" style="background:#f4f7fb;color:#1976d2;border:none;padding:6px 16px;border-radius:16px;font-weight:600;font-size:0.98rem;">답변없는 질문</button>
+                    <button class="tab-btn" data-tab="tab-my" style="background:#f4f7fb;color:#1976d2;border:none;padding:6px 16px;border-radius:16px;font-weight:600;font-size:0.98rem;">내가 쓴 글</button>
+                </div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                    <a href="#" class="new-post-btn" style="margin-bottom:0;padding:6px 18px;font-size:0.98rem;border-radius:16px;font-weight:700;box-shadow:0 2px 8px rgba(25,118,210,0.09);">글 작성하기</a>
+                    <button id="search-icon-btn" style="background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center;">
+                        <img src="../assets/icon/search.svg" alt="검색" style="width:22px;height:22px;vertical-align:middle;">
+                    </button>
+                    <form id="search-form" style="width:0;opacity:0;overflow:hidden;transition:width 0.3s, opacity 0.2s;display:flex;align-items:center;margin-left:0;" onsubmit="return false;">
+                        <input type="text" placeholder="검색어를 입력하세요" style="padding:6px 12px;border:1px solid #d0d7e2;border-radius:16px;font-size:0.97rem;outline:none;width:140px;transition:opacity 0.2s;opacity:1;background:#fff;">
+                    </form>
+                </div>
+            </div>
+            <div id="tab-popular" class="tab-content" style="display:block;">
+                <section class="forum-section" style="padding-top:18px;">
+                    <h2 style="display:flex;align-items:center;gap:8px;">
+                        <span style="font-size:1.2em;">🔥</span> 인기글
+                    </h2>
+                    <div class="desc">지금 커뮤니티에서 가장 인기 있는 글이에요.</div>
+                    <div class="post-list" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr));">
+                        <div class="post-card" style="display:flex;gap:14px;align-items:flex-start;background:linear-gradient(90deg,#e3f0ff 60%,#fff 100%);">
+                            <img src="../assets/icon/fire.svg" alt="인기" style="width:38px;height:38px;">
+                            <div style="flex:1;">
+                                <a href="#" class="post-title">[공지] BugFinder 6월 실전 디버깅 챌린지 오픈!</a>
+                                <div class="post-meta">운영팀 · 추천: 12 · 조회: 3120 · 1일 전</div>
+                                <div class="post-snippet">6월 한정 실전 디버깅 챌린지가 시작되었습니다! 상위 랭커에게는 특별 뱃지와 상품이 지급됩니다. 지금 바로 도전하세요!</div>
+                            </div>
+                        </div>
+                        <div class="post-card" style="display:flex;gap:14px;align-items:flex-start;background:linear-gradient(90deg,#f0eaff 60%,#fff 100%);">
+                            <img src="../assets/icon/team.svg" alt="팀원" style="width:38px;height:38px;">
+                            <div style="flex:1;">
+                                <a href="#" class="post-title">[모집] 버그헌팅 스터디 2기 팀원 구합니다</a>
+                                <div class="post-meta">DebugKing · 추천: 7 · 조회: 1980 · 3일 전</div>
+                                <div class="post-snippet">실전 문제풀이와 정보보안 이슈를 함께 공부할 스터디 팀원을 모집합니다. 초보도 환영!</div>
+                            </div>
+                        </div>
+                        <div class="post-card" style="display:flex;gap:14px;align-items:flex-start;background:linear-gradient(90deg,#eafff0 60%,#fff 100%);">
+                            <img src="../assets/icon/study.svg" alt="공부" style="width:38px;height:38px;">
+                            <div style="flex:1;">
+                                <a href="#" class="post-title">[후기] 첫 실전 디버깅 문제 풀이 성공!</a>
+                                <div class="post-meta">코딩초보 · 추천: 5 · 조회: 1420 · 5일 전</div>
+                                <div class="post-snippet">BugFinder에서 제공한 실전 문제를 풀고 디버깅 실력이 한 단계 성장한 것 같아요. 모두 화이팅!</div>
+                            </div>
+                        </div>
+                        <div class="post-card" style="display:flex;gap:14px;align-items:flex-start;background:linear-gradient(90deg,#fffbe3 60%,#fff 100%);">
+                            <img src="../assets/icon/quiz.svg" alt="퀴즈" style="width:38px;height:38px;">
+                            <div style="flex:1;">
+                                <a href="#" class="post-title">[이벤트] 오늘의 버그를 잡아라!</a>
+                                <div class="post-meta">BugHunter · 추천: 6 · 조회: 1550 · 2일 전</div>
+                                <div class="post-snippet">매일 새로운 버그 문제를 풀고 포인트를 쌓아보세요! 랭킹 1위에게는 특별한 선물이!</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="tab-latest" class="tab-content" style="display:none;">
+                <section class="forum-section" style="padding-top:18px;">
+                    <h2 style="display:flex;align-items:center;gap:8px;">
+                        <span style="font-size:1.2em;">🕑</span> 최신글
+                    </h2>
+                    <div class="desc">방금 올라온 따끈따끈한 글이에요.</div>
+                    <div class="post-list" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr));">
+                        <div class="post-card" style="display:flex;gap:14px;align-items:flex-start;background:linear-gradient(90deg,#e3f7ff 60%,#fff 100%);">
+                            <img src="../assets/icon/fire.svg" alt="최신" style="width:38px;height:38px;">
+                            <div style="flex:1;">
+                                <a href="#" class="post-title">[질문] 디버깅 툴 추천 부탁드려요!</a>
+                                <div class="post-meta">newbie · 0분 전</div>
+                                <div class="post-snippet">처음으로 실전 문제를 풀어보려는데, 입문자에게 좋은 디버깅 툴이 있을까요?</div>
+                            </div>
+                        </div>
+                        <div class="post-card" style="display:flex;gap:14px;align-items:flex-start;background:linear-gradient(90deg,#e3f7ff 60%,#fff 100%);">
+                            <img src="../assets/icon/study.svg" alt="최신" style="width:38px;height:38px;">
+                            <div style="flex:1;">
+                                <a href="#" class="post-title">[후기] 오늘의 문제 풀이 인증!</a>
+                                <div class="post-meta">studybug · 5분 전</div>
+                                <div class="post-snippet">오늘 제공된 버그헌팅 문제를 풀고 인증합니다! 다들 도전해보세요!</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="tab-unanswered" class="tab-content" style="display:none;">
+                <section class="forum-section" style="padding-top:18px;">
+                    <h2 style="display:flex;align-items:center;gap:8px;">
+                        <span style="font-size:1.1em;">❓</span> 답변을 기다리는 질문
+                    </h2>
+                    <div class="desc">아직 답변이 없는 질문에 답변을 남겨보세요!</div>
+                    <div class="post-list" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr));">
+                        <div class="post-card" style="display:flex;gap:14px;align-items:flex-start;background:linear-gradient(90deg,#e3eaff 60%,#fff 100%);">
+                            <img src="../assets/icon/question.svg" alt="질문" style="width:38px;height:38px;">
+                            <div style="flex:1;">
+                                <a href="#" class="post-title">[질문] gdb에서 watchpoint가 안 걸려요</a>
+                                <div class="post-meta">익명 · 1시간 전 <span style="background:#e3eaff;color:#1976d2;padding:2px 8px;border-radius:12px;font-size:0.85em;margin-left:8px;">디버깅</span></div>
+                                <div class="post-snippet">gdb로 watchpoint를 걸었는데 값이 바뀌어도 멈추지 않습니다. 혹시 설정이 잘못된 걸까요?</div>
+                            </div>
+                        </div>
+                        <div class="post-card" style="display:flex;gap:14px;align-items:flex-start;background:linear-gradient(90deg,#e3eaff 60%,#fff 100%);">
+                            <img src="../assets/icon/question.svg" alt="질문" style="width:38px;height:38px;">
+                            <div style="flex:1;">
+                                <a href="#" class="post-title">[질문] 실전 문제 풀이 중 segmentation fault</a>
+                                <div class="post-meta">익명 · 2시간 전 <span style="background:#e3eaff;color:#1976d2;padding:2px 8px;border-radius:12px;font-size:0.85em;margin-left:8px;">실습</span></div>
+                                <div class="post-snippet">문제 풀이 중 segmentation fault가 발생합니다. 디버깅 팁이나 참고 자료가 있을까요?</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="tab-my" class="tab-content" style="display:none;">
+                <section class="forum-section" style="padding-top:18px;">
+                    <h2 style="display:flex;align-items:center;gap:8px;">
+                        <span style="font-size:1.1em;">📝</span> 내가 쓴 글
+                    </h2>
+                    <div class="desc">내가 작성한 글만 모아볼 수 있어요.</div>
+                    <div class="post-list" style="grid-template-columns:repeat(auto-fit,minmax(340px,1fr));">
+                        <div class="post-card" style="display:flex;gap:14px;align-items:flex-start;background:linear-gradient(90deg,#f7ffe3 60%,#fff 100%);">
+                            <img src="../assets/icon/fire.svg" alt="내글" style="width:38px;height:38px;">
+                            <div style="flex:1;">
+                                <a href="#" class="post-title">[후기] 첫 랭킹 진입 성공!</a>
+                                <div class="post-meta">나 · 3일 전</div>
+                                <div class="post-snippet">BugFinder에서 열심히 문제를 풀었더니 드디어 랭킹에 올랐어요! 모두 화이팅!</div>
+                            </div>
+                        </div>
+                        <div class="post-card" style="display:flex;gap:14px;align-items:flex-start;background:linear-gradient(90deg,#f7ffe3 60%,#fff 100%);">
+                            <img src="../assets/icon/study.svg" alt="내글" style="width:38px;height:38px;">
+                            <div style="flex:1;">
+                                <a href="#" class="post-title">[공유] 정보보안 입문자를 위한 추천 강의</a>
+                                <div class="post-meta">나 · 5일 전</div>
+                                <div class="post-snippet">BugFinder에서 공부하며 도움이 되었던 정보보안 강의를 정리해봤어요. 입문자분들 참고하세요!</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+            <div id="new-post-modal" class="modal-overlay" style="display:none;">
+              <div class="modal-content">
+                <button class="modal-close" id="modal-close-btn" aria-label="닫기">&times;</button>
+                <h2>글 작성하기</h2>
+                <form class="modal-form" id="modal-post-form">
+                  <div class="modal-field">
+                    <label for="modal-title">제목</label>
+                    <input id="modal-title" type="text" placeholder="제목을 입력하세요" required>
+                  </div>
+                  <div class="modal-field">
+                    <label for="modal-body">내용</label>
+                    <textarea id="modal-body" placeholder="내용을 입력하세요" required></textarea>
+                  </div>
+                  <div class="modal-btns">
+                    <button type="button" class="modal-close">취소</button>
+                    <button type="submit">등록</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+        </main>
+    </div>
+        <footer class="site-footer">
+        <div class="footer-sitemap">
+            <div>
+                <h4>메인</h4>
+                <ul>
+                    <li><a href="../index.html">서비스 소개</a></li>
+                    <li><a href="../index.html">공지사항</a></li>
+                    <li><a href="../pages/forum.html">인기 콘텐츠</a></li>
+                    <li><a href="../index.html">이벤트 및 배너</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>학습</h4>
+                <ul>
+                    <li><a href="../pages/lecture.html">강의</a></li>
+                    <li><a href="../pages/lecture.html">문제 풀이</a></li>
+                    <li><a href="../pages/lecture.html">실습</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>커뮤니티</h4>
+                <ul>
+                    <li><a href="../pages/forum.html">자유게시판</a></li>
+                    <li><a href="../pages/forum.html">질문답변</a></li>
+                    <li><a href="../pages/forum.html">내 활동</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>랭킹</h4>
+                <ul>
+                    <li><a href="../pages/ranking.html">전체 랭킹</a></li>
+                    <li><a href="../pages/ranking.html">카테고리별 랭킹</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>소셜</h4>
+                <ul class="footer-social">
+                    <li><a href="https://github.com/dlehdrjsgg/BugFinder"><img src="../assets/icon/github.svg" alt="GitHub" /></a></li>
+                    <li><a href="https://youtube.com/"><img src="../assets/icon/youtube.svg" alt="YouTube" /></a></li>
+                    <li><a href="https://discord.com"><img src="../assets/icon/discord.svg" alt="Discord" /></a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            © BugFinder 2025. All rights reserved.
+        </div>
+    </footer>
+    <script>
+        const searchIconBtn = document.getElementById('search-icon-btn');
+        const searchForm = document.getElementById('search-form');
+        const searchInput = searchForm.querySelector('input');
+        let searchOpen = false;
+
+        searchIconBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            searchOpen = !searchOpen;
+            if (searchOpen) {
+                searchForm.style.width = '170px';
+                searchForm.style.opacity = '1';
+                searchForm.style.marginLeft = '8px';
+                setTimeout(() => {
+                    searchInput.focus();
+                }, 100);
+            } else {
+                searchForm.style.opacity = '0';
+                setTimeout(() => {
+                    searchForm.style.width = '0';
+                    searchForm.style.marginLeft = '0';
+                }, 200);
+            }
+        });
+
+        document.addEventListener('click', (e) => {
+            if (
+                searchOpen &&
+                !searchForm.contains(e.target) &&
+                e.target !== searchIconBtn &&
+                !searchIconBtn.contains(e.target)
+            ) {
+                searchForm.style.opacity = '0';
+                setTimeout(() => {
+                    searchForm.style.width = '0';
+                    searchForm.style.marginLeft = '0';
+                    searchOpen = false;
+                }, 200);
+            }
+        });
+
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                tabBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                tabContents.forEach(tc => tc.style.display = 'none');
+                const target = this.getAttribute('data-tab');
+                document.getElementById(target).style.display = 'block';
+            });
+        });
+
+        const newPostBtn = document.querySelector('.new-post-btn');
+        const newPostModal = document.getElementById('new-post-modal');
+        const modalCloseBtns = document.querySelectorAll('.modal-close');
+        const modalPostForm = document.getElementById('modal-post-form');
+
+        newPostBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            newPostModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+        modalCloseBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                newPostModal.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+        });
+        newPostModal.addEventListener('click', function(e) {
+            if (e.target === newPostModal) {
+                newPostModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+        modalPostForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('새로운 글이 등록되었습니다!');
+            newPostModal.style.display = 'none';
+            document.body.style.overflow = '';
+            modalPostForm.reset();
+        });
+    </script>
+</body>
+</html>
